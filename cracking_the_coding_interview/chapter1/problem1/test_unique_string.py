@@ -2,17 +2,26 @@
 Test cases for unique_string
 """
 import unittest
-from .unique_string import is_unique
+from .unique_string import is_unique_1, is_unique_2
 
 
 class TestUniqueString(unittest.TestCase):
-    def test_is_unique(self):
+    def test_is_unique_1(self):
         """
-        Simple test cases for is_unique function
+        Simple test cases for is_unique_1 function
         """
-        self.assertTrue(is_unique('abcd'))
-        self.assertFalse(is_unique('zzz'))
-        self.assertFalse(is_unique('123.098670asdf'))
-        self.assertTrue(is_unique('aA'))
+        self.assertTrue(is_unique_1('abcd'))
+        self.assertFalse(is_unique_1('zzz'))
+        self.assertFalse(is_unique_1('123.098670asdf'))
+        self.assertTrue(is_unique_1('aA'))
+
+    def test_is_unique_2(self):
+        """
+        Simple test cases for is_unique_2 function
+        """
+        self.assertTrue(is_unique_2('abcd'))
+        self.assertFalse(is_unique_2('zzz'))
+        self.assertFalse(is_unique_2('123.098670asdf'))
+        self.assertTrue(is_unique_2('aA'))
 
 
