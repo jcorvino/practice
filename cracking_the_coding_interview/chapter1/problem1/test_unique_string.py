@@ -13,7 +13,8 @@ class TestUniqueString(unittest.TestCase):
         self.assertTrue(is_unique_1('abcd'))
         self.assertFalse(is_unique_1('zzz'))
         self.assertFalse(is_unique_1('123.098670asdf'))
-        self.assertTrue(is_unique_1('aA'))
+        self.assertTrue(is_unique_1('a'))
+        self.assertTrue(is_unique_1(''))
 
     def test_is_unique_2(self):
         """
@@ -22,6 +23,7 @@ class TestUniqueString(unittest.TestCase):
         self.assertTrue(is_unique_2('abcd'))
         self.assertFalse(is_unique_2('zzz'))
         self.assertFalse(is_unique_2('123.098670asdf'))
-        self.assertTrue(is_unique_2('aA'))
+        self.assertTrue(is_unique_2('a'))
+        self.assertTrue(is_unique_2(''))
 
 

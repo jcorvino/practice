@@ -22,12 +22,12 @@ def is_unique_2(string):
     """
     Checks if all characters in a string are unique.
     Uses a list of True/False to check which unicode character has appeared.
-    Time = O(n). Space = O(n).
+    Time = O(n). Space = O(1).
 
     :param string: a string
     :return: True if unique. False otherwise.
     """
-    characters = [False] * 11001  # List of True/False for each unicode character
+    characters = [False] * 110001  # List of True/False for each unicode character (0x110000)
     for s in string:
         i = ord(s)
         if characters[i]:
