@@ -13,6 +13,12 @@ def is_anagram(first, second, ignore=''):
     :param ignore: string of all characters to ignore
     :return: True if anagram, False otherwise
     """
+    # Special case if first is empty string
+    if first == '':
+        # swap first and second so for loop executes properly
+        first = second
+        second = ''
+
     for c in first:
         if c in ignore:
             pass

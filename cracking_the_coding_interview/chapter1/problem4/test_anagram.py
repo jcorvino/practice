@@ -15,8 +15,10 @@ class TestAnagram(unittest.TestCase):
         self.assertTrue(is_anagram('restful', 'fluster'))
         self.assertFalse(is_anagram("What's an anagram?", "I don't know"))
 
-        # Edge case (empty strings)
+        # Edge cases (empty strings)
         self.assertTrue(is_anagram('', ''))
+        self.assertFalse(is_anagram('', 'abc'))
+        self.assertFalse(is_anagram('abc', ''))
 
         # Cases w/ ignore
         self.assertFalse(is_anagram('tom marvolo riddle', 'i am lord voldemort'))
