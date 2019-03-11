@@ -1,5 +1,5 @@
 """
-Problem 1.4: Write a method to decide if two strings are anagrams or not.
+Problem 1.4 (4th ed.): Write a method to decide if two strings are anagrams or not.
 """
 
 

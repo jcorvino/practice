@@ -1,5 +1,5 @@
 """
-Problem 1.2: Write code to reverse a C-Style string.
+Problem 1.2 (4th ed.): Write code to reverse a C-Style string.
 C-Style means that "abcd" is represented as 5 characters, including the null character.
 """
 

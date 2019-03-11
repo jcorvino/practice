@@ -1,5 +1,5 @@
 """
-Problem 1.5: Write a method to replace all spaces in a string with '%20'.
+Problem 1.5 (4th ed.): Write a method to replace all spaces in a string with '%20'.
 NOTE: I will assume the str.replace method is not available.
 """
 

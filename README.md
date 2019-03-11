@@ -1,5 +1,5 @@
 # practice
-Practice problems from "Cracking the Coding Interview" textbook.
+Practice problems from "Cracking the Coding Interview" 6th Edition (Problems 1.1-1.5 from 4th Edition).
 Currently working on chapter 1.
 
 Note: Many of the questions were originally intended for Java.

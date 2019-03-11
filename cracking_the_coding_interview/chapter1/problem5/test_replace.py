@@ -13,3 +13,4 @@ class TestReplace(unittest.TestCase):
         """
         self.assertEqual(replace('this is a test'), 'this%20is%20a%20test')
         self.assertEqual(replace('another\ttest\n'), 'another\ttest\n')
+        self.assertEqual(replace(''), '')
