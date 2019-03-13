@@ -22,6 +22,8 @@ def is_unique_2(string):
     """
     Checks if all characters in a string are unique.
     Uses a list of True/False to check which unicode character has appeared.
+    NOTE: If this code was required in real life, restricting to ASCII characters (or a smaller set than unicode) would
+    drastically improve speed.
     Time = O(n). Space = O(1).
 
     :param string: a string

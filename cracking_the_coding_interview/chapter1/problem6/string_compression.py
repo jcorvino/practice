@@ -7,7 +7,6 @@ Example:
 """
 
 
-# TODO: Need to verify time complexity (as well as time complexity of previous answers). Concatenation of strings w/o using += is O(N) not O(1).
 def string_compressor(string):
     """
     A function that compresses strings made up of alphabet characters.
@@ -18,7 +17,7 @@ def string_compressor(string):
     """
     previous = None
     count = 0
-    compressed_string = ''
+    compressed_list = []
     for char in string:
         if previous is None:
             count += 1
@@ -26,10 +25,13 @@ def string_compressor(string):
         elif char == previous:
             count += 1
         else:
-            compressed_string += previous + str(count)
+            compressed_list.append(previous + str(count))
             count = 1
             previous = char
-    compressed_string += previous + str(count)
+    compressed_list.append(previous + str(count))
+
+    # Convert list to string
+    compressed_string = ''.join(compressed_list)
 
     if len(compressed_string) > len(string):
         compressed_string = string
