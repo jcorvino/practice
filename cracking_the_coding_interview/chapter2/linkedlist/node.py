@@ -6,3 +6,6 @@ class Node:
         self.next = None
         self.prev = None  # only used in DoublyLinkedList
         self.data = data
+
+    def __str__(self):
+        return str(self.data)

@@ -2,9 +2,8 @@
 Test cases for LinkedList module
 """
 import unittest
-from .Node import Node
-from cracking_the_coding_interview.chapter2.linkedlist import SinglyLinkedList, DoublyLinkedList
-
+from .node import Node
+from .linkedlist import SinglyLinkedList, DoublyLinkedList
 
 
 class TestLinkedList(unittest.TestCase):
@@ -38,6 +37,7 @@ class TestLinkedList(unittest.TestCase):
             if n.next is None:
                 end_node = n
             n = n.next
+        print(sll)
 
         # Test that the remove function does not raise errors
         sll.remove(end_node)

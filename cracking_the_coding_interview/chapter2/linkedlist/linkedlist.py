@@ -1,4 +1,4 @@
-from .Node import Node
+from .node import Node
 
 
 class SinglyLinkedList:
@@ -8,6 +8,16 @@ class SinglyLinkedList:
 
     def __init__(self):
         self.head = None
+
+    def __str__(self):
+        out = []
+        n = self.head
+        while n.next is not None:
+            out.append(str(n))
+            n = n.next
+        out.append(str(n))  # end node
+
+        return 'SinglyLinkedList(' + ','.join(out) + ')'
 
     def append(self, data):
         """
