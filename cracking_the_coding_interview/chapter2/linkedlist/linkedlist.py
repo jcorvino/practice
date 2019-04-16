@@ -12,12 +12,31 @@ class SinglyLinkedList:
     def __str__(self):
         out = []
         n = self.head
-        while n.next is not None:
+        while n is not None:
             out.append(str(n))
             n = n.next
-        out.append(str(n))  # end node
 
         return 'SinglyLinkedList(' + ','.join(out) + ')'
+
+    def __eq__(self, other):
+        """
+        Simple implementation of __eq__ to check if all elements of both SinglyLinkedLists contain the same data.
+        """
+        if not isinstance(other, SinglyLinkedList):
+            return False
+
+        node = self.head
+        other_node = other.head
+        while True:
+            if node.next is None or other_node.next is None:
+                if node.next is other_node.next:
+                    return True
+                else:
+                    return False
+            elif node.data != other_node.data:
+                return False
+            node = node.next
+            other_node = other_node.next
 
     def append(self, data):
         """

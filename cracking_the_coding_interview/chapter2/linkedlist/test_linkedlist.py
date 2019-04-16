@@ -6,7 +6,13 @@ from .node import Node
 from .linkedlist import SinglyLinkedList, DoublyLinkedList
 
 
-class TestLinkedList(unittest.TestCase):
+class TestSinglyLinkedList(unittest.TestCase):
+
+    def setUp(self):
+        self.sll = SinglyLinkedList()
+        self.linked_list_data = ['a', 'b', 'c', 'd', 2, True, ['sub', 'list'], False]
+        for data in self.linked_list_data:  # Create singly linked list and populate w/ test data
+            self.sll.append(data)
 
     def test_node(self):
         """
@@ -18,35 +24,33 @@ class TestLinkedList(unittest.TestCase):
         # Test node
         self.assertEqual(mynode.data, 'test')
         self.assertIsNone(mynode.next)
-        self.assertIsNone(mynode.prev)
+        # self.assertIsNone(mynode.prev)
 
-    def test_singly_linked_list(self):
+    def test_singly_linked_list_append(self):
         """
-        Simple test cases for SinglyLinkedList class
+        Simple test cases for append method of SinglyLinkedList class
         """
-        # Create singly linked list and populate w/ test data
-        sll = SinglyLinkedList()
-        linked_list_data = ['a', 'b', 'c', 'd', 2, True, ['sub', 'list'], False]
-        for data in linked_list_data:
-            sll.append(data)
-
         # Test if singly linked list was created correctly
-        n = sll.head
-        for data in linked_list_data:
+        n = self.sll.head
+        for data in self.linked_list_data:
             self.assertEqual(n.data, data)
             if n.next is None:
-                end_node = n
+                self.end_node = n
             n = n.next
-        print(sll)
 
+    def test_singly_linked_list_print(self):
+        """
+        Simple test cases for print method of SinglyLinkedList class
+        """
+        self.assertEqual(str(self.sll), 'SinglyLinkedList(' + ','.join([str(x) for x in self.linked_list_data]) + ')')
+        # print(sll)
+
+    def test_singly_linked_list_remove(self):
+        """
+        Simple test cases for remove method of SinglyLinkedList class
+        """
         # Test that the remove function does not raise errors
-        sll.remove(end_node)
-        while sll.head is not None:
-            sll.remove(sll.head)
-        sll.remove(Node('test'))  # No error should raise when node not found
+        while self.sll.head is not None:
+            self.sll.remove(self.sll.head)
+        self.sll.remove(Node('test'))  # No error should raise when node not found
 
-    def test_doubly_linked_list(self):
-        """
-        Simple test cases for DoublyLinkedList class
-        """
-        pass
