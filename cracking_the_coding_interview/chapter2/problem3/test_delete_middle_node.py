@@ -24,6 +24,6 @@ class TestDeleteMiddleNode(unittest.TestCase):
 
         # Check if delete_middle_node produces the solution
         node = sll.head.next  # node 2
-        delete_middle_node(sll, node)
+        delete_middle_node(node)
         self.assertEqual(solution, sll)
 
