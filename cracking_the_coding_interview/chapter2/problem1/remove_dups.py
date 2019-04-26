@@ -1,6 +1,10 @@
 """
 Problem 2.1: Write code to remove duplicates from an unsorted linked list.
+
 Follow up: What if you are not allowed to use buffers?
+Answer: same approach as remove_dups, but instead of checking
+"if n.data in unique_data", check if n.data equals any other linked list node. This would also take O(N**2) time, but
+space complexity would be O(1) without a buffer.
 """
 
 
