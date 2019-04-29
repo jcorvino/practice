@@ -61,6 +61,20 @@ class TestSumLists(unittest.TestCase):
         out = sum_lists_reverse(a, b, c)
         self.assertEqual(out, solution)
 
+        # Case 3: 8 + 8 = 16
+        a = SinglyLinkedList()
+        a.append(8)
+
+        b = SinglyLinkedList()
+        b.append(8)
+
+        solution = SinglyLinkedList()
+        solution.append(6)
+        solution.append(1)
+
+        out = sum_lists_reverse(a, b)
+        self.assertEqual(out, solution)
+
     def test_sum_lists_forward(self):
         # Case 1: 617 + 295 = 912
         a = SinglyLinkedList()

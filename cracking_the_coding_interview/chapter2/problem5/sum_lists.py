@@ -37,7 +37,7 @@ def sum_lists_reverse(*args):
         sum_list.append(summation)
 
         # Check for end of all lists
-        if all(map(lambda x: x is None, nodes)):
+        if all(map(lambda x: x is None, nodes)) and carryover == 0:
             break
 
     return sum_list
