@@ -2,8 +2,8 @@
 Test cases for sum_lists module
 """
 import unittest
-from cracking_the_coding_interview.chapter2.problem5.sum_lists import sum_lists_reverse, sum_lists_forward, pad_linked_list
-from cracking_the_coding_interview.chapter2.linkedlist.linkedlist import SinglyLinkedList
+from ctci.chapter2.problem5.sum_lists import sum_lists_reverse, sum_lists_forward, pad_linked_list
+from ctci.chapter2.linkedlist.linkedlist import SinglyLinkedList
 
 
 class TestSumLists(unittest.TestCase):

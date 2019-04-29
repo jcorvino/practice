@@ -2,8 +2,8 @@
 Test cases for palindrome module
 """
 import unittest
-from cracking_the_coding_interview.chapter2.problem6.palindrome import palindrome
-from cracking_the_coding_interview.chapter2.linkedlist.linkedlist import SinglyLinkedList
+from ctci.chapter2.problem6.palindrome import palindrome
+from ctci.chapter2.linkedlist.linkedlist import SinglyLinkedList
 
 
 class TestPalindrome(unittest.TestCase):

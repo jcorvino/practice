@@ -3,9 +3,9 @@ Test cases for remove_dups module
 """
 import unittest
 import copy
-# from cracking_the_coding_interview.chapter2.linkedlist.node import Node
-from cracking_the_coding_interview.chapter2.linkedlist.linkedlist import SinglyLinkedList, DoublyLinkedList
-from .remove_dups import remove_dups, remove_dups_hashable
+# from ctci.chapter2.linkedlist.node import Node
+from ctci.chapter2.linkedlist.linkedlist import SinglyLinkedList, DoublyLinkedList
+from ctci.chapter2.problem1.remove_dups import remove_dups, remove_dups_hashable
 
 
 class TestRemoveDups(unittest.TestCase):

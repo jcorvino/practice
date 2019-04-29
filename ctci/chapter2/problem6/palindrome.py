@@ -2,7 +2,7 @@
 Problem 2.6: Implement a function to check if a list is a palindrome.
 """
 from math import ceil
-from cracking_the_coding_interview.chapter2.problem2.k_to_last import k_to_last
+from ctci.chapter2.problem2.k_to_last import k_to_last
 
 
 def palindrome(sll):

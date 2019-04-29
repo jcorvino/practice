@@ -2,8 +2,8 @@
 Test cases for partition module
 """
 import unittest
-from cracking_the_coding_interview.chapter2.linkedlist.linkedlist import SinglyLinkedList
-from cracking_the_coding_interview.chapter2.problem4.partition import partition
+from ctci.chapter2.linkedlist.linkedlist import SinglyLinkedList
+from ctci.chapter2.problem4.partition import partition
 
 
 class TestPartition(unittest.TestCase):

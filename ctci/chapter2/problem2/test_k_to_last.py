@@ -2,8 +2,8 @@
 Test cases for k_to_last module
 """
 import unittest
-from cracking_the_coding_interview.chapter2.linkedlist.linkedlist import SinglyLinkedList
-from cracking_the_coding_interview.chapter2.problem2.k_to_last import k_to_last
+from ctci.chapter2.linkedlist.linkedlist import SinglyLinkedList
+from ctci.chapter2.problem2.k_to_last import k_to_last
 
 
 class TestKToLast(unittest.TestCase):

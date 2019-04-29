@@ -2,8 +2,8 @@
 Test cases for delete_middle_node module
 """
 import unittest
-from cracking_the_coding_interview.chapter2.linkedlist.linkedlist import SinglyLinkedList
-from cracking_the_coding_interview.chapter2.problem3.delete_middle_node import delete_middle_node
+from ctci.chapter2.linkedlist.linkedlist import SinglyLinkedList
+from ctci.chapter2.problem3.delete_middle_node import delete_middle_node
 
 
 class TestDeleteMiddleNode(unittest.TestCase):
