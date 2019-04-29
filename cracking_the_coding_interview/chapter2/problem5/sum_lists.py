@@ -9,11 +9,12 @@ output: (2-1-9)  =  912
 Follow up: repeat the above problem supposing the digits are stored in forward order.
 """
 from cracking_the_coding_interview.chapter2.linkedlist.linkedlist import SinglyLinkedList
+from cracking_the_coding_interview.chapter2.linkedlist.node import Node
 
 
 def sum_lists_reverse(*args):
     """
-    Sums two singly linked lists. Each node is a digit stored in reverse order.
+    Sums singly linked lists. Each node is a digit stored in reverse order.
 
     :param args: SinglyLinkedLists to be summed.
     :return SinglyLinkedList: sum of inputs
@@ -40,3 +41,73 @@ def sum_lists_reverse(*args):
             break
 
     return sum_list
+
+
+def sum_lists_forward(*args):
+    """
+    Sums singly linked lists. Each node is a digit stored in forward order.
+
+    :param args: SinglyLinkedLists to be summed.
+    :return SinglyLinkedList: sum of inputs
+    """
+    #TODO: move some of this logic to other functions. Too wordy / complex.
+    sum_list = SinglyLinkedList()
+
+    # pad lists
+    lengths = list(map(len, args))
+    max_length = max(lengths)
+    for i, arg in enumerate(args):
+        pad_linked_list(arg, max_length - lengths[i])
+
+    # sum lists
+    nodes = list(map(lambda x: x.head, args))
+    while True:
+        # Sum data from each list
+        summation = 0
+        for i, node in enumerate(nodes):
+            summation += node.data
+            nodes[i] = node.next
+        sum_list.append(summation)
+
+        # Check if the end of a list is reached (all lists are the same length)
+        if node.next is None:
+            break
+
+    # account for carryover
+    while True:
+        exit_flag = True
+        runner = sum_list.head
+        while runner.next is not None:
+            carry, keep = divmod(runner.next.data, 10)
+            runner.data += carry
+            runner.next.data = keep
+            runner = runner.next
+            if carry > 0:
+                exit_flag = False
+
+        # check that head value isn't >=10
+        carry, keep = divmod(sum_list.head.data, 10)
+        if carry > 0:
+            sum_list.head.data = keep
+            pad_linked_list(sum_list, 1, value=carry)
+            exit_flag = False
+
+        if exit_flag:
+            break
+
+    return sum_list
+
+
+def pad_linked_list(sll, padding, value=0):
+    """
+    Pad a singly linked list
+
+    :type sll: SinglyLinkedList
+    :param int padding: number of padding nodes to add
+    :param value: value of padding (default = 0)
+    :return: None
+    """
+    for i in range(padding):
+        new_head = Node(value)
+        new_head.next = sll.head
+        sll.head = new_head

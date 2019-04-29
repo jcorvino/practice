@@ -45,6 +45,12 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.assertEqual(str(self.sll), 'SinglyLinkedList(' + ','.join([str(x) for x in self.linked_list_data]) + ')')
         # print(sll)
 
+    def test_singly_linked_list_len(self):
+        """
+        Simple test cases for len method of SinglyLinkedList class
+        """
+        self.assertEqual(len(self.sll), 8)
+
     def test_singly_linked_list_remove(self):
         """
         Simple test cases for remove method of SinglyLinkedList class

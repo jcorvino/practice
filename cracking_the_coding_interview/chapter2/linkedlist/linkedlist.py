@@ -38,6 +38,17 @@ class SinglyLinkedList:
             node = node.next
             other_node = other_node.next
 
+    def __len__(self):
+        """
+        Simple implementation of __len__. Time complexity = O(N).
+        """
+        counter = 0
+        node = self.head
+        while node is not None:
+            counter += 1
+            node = node.next
+        return counter
+
     def append(self, data):
         """
         Appends data to tail of SinglyLinkedList
